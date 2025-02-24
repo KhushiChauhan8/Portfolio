@@ -10,6 +10,10 @@ import ContactPage from "./Pages/Contact";
 import ProjectDetails from "./components/ProjectDetail";
 import WelcomeScreen from "./Pages/WelcomeScreen";
 import { AnimatePresence } from 'framer-motion';
+// import { projectsData } from "./data/projects";
+// import { certificatesData } from "./data/certificates";
+import CertificatesList from "./components/CertificatesList";
+
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
@@ -28,6 +32,8 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
           <About />
           <Portofolio />
           <ContactPage />
+          <CertificatesList />
+          
           <footer>
             <center>
               <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />
