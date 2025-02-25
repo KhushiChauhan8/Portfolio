@@ -10,9 +10,8 @@ import ContactPage from "./Pages/Contact";
 import ProjectDetails from "./components/ProjectDetail";
 import WelcomeScreen from "./Pages/WelcomeScreen";
 import { AnimatePresence } from 'framer-motion';
-// import { projectsData } from "./data/projects";
-// import { certificatesData } from "./data/certificates";
-import CertificatesList from "./components/CertificatesList";
+// import TechStackIcon from "./components/TechStackIcon";
+
 
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
@@ -32,7 +31,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
           <About />
           <Portofolio />
           <ContactPage />
-          <CertificatesList />
+          
           
           <footer>
             <center>
