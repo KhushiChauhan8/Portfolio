@@ -15,10 +15,7 @@ import Certificate from "../components/Certificate";
 import { Code, Award, Boxes } from "lucide-react";
 import { projectsData } from "../data/projects";
 import { certificatesData } from "../data/certificates";
-import { ToggleButton, ToggleButtonGroup } from "@mui/material";
-
-
-// ToggleButton and other components remain unchanged
+import { ToggleButton } from "@mui/material";
 
 function TabPanel({ children, value, index, ...other }) {
   return (
@@ -52,18 +49,23 @@ function a11yProps(index) {
 }
 
 const techStacks = [
-  { icon: "html.svg", language: "HTML" },
-  { icon: "css.svg", language: "CSS" },
-  { icon: "javascript.svg", language: "JavaScript" },
-  { icon: "tailwind.svg", language: "Tailwind CSS" },
-  { icon: "reactjs.svg", language: "ReactJS" },
-  { icon: "vite.svg", language: "Vite" },
-  { icon: "nodejs.svg", language: "Node JS" },
-  { icon: "bootstrap.svg", language: "Bootstrap" },
-  { icon: "firebase.svg", language: "Firebase" },
-  { icon: "MUI.svg", language: "Material UI" },
-  { icon: "vercel.svg", language: "Vercel" },
-  { icon: "SweetAlert.svg", language: "SweetAlert2" },
+  { id: 1, name: "HTML", icon: "/html.svg" },
+  { id: 2, name: "CSS", icon: "/css.svg" },
+  { id: 3, name: "JavaScript", icon: "/javascript.svg" },
+  { id: 4, name: "Tailwind CSS", icon: "/tailwind.svg" },
+  { id: 5, name: "React JS", icon: "/reactjs.svg" },
+  { id: 6, name: "Vite", icon: "/vite.svg" },
+  { id: 7, name: "Node JS", icon: "/nodejs.svg" },
+  { id: 8, name: "Bootstrap", icon: "/bootstrap.svg" },
+  { id: 11, name: "Vercel", icon: "/vercel.svg" },
+  { id: 12, name: "Postman", icon: "/postman.svg" },
+  { id: 13, name: "MongoDB", icon: "/mongodb.svg" },
+  { id: 15, name: "Express JS", icon: "/Express.svg" },
+  { id: 16, name: "Redux", icon: "/redux.svg" },
+  { id: 17, name: "Git", icon: "/git.svg" },
+  { id: 18, name: "GitHub", icon: "/github.svg" },
+  { id: 19, name: "AWS", icon: "/aws.svg" },
+  { id: 14, name: "Digital Ocean", icon: "/digitalOcean.svg" },
 ];
 
 export default function FullWidthTabs() {
@@ -99,7 +101,6 @@ export default function FullWidthTabs() {
 
   return (
     <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden" id="Portofolio">
-      {/* Header section - unchanged */}
       <div className="text-center pb-10" data-aos="fade-up" data-aos-duration="1000">
         <h2 className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
           <span style={{
@@ -119,7 +120,6 @@ export default function FullWidthTabs() {
       </div>
 
       <Box sx={{ width: "100%" }}>
-        {/* AppBar and Tabs section - unchanged */}
         <AppBar
           position="static"
           elevation={0}
@@ -143,7 +143,6 @@ export default function FullWidthTabs() {
           }}
           className="md:px-4"
         >
-          {/* Tabs remain unchanged */}
           <Tabs
             value={value}
             onChange={handleChange}
@@ -151,7 +150,6 @@ export default function FullWidthTabs() {
             indicatorColor="secondary"
             variant="fullWidth"
             sx={{
-              // Existing styles remain unchanged
               minHeight: "70px",
               "& .MuiTab-root": {
                 fontSize: { xs: "0.9rem", md: "1rem" },
@@ -190,12 +188,12 @@ export default function FullWidthTabs() {
           >
             <Tab
               icon={<Code className="mb-2 w-5 h-5 transition-all duration-300" />}
-              label="Projects"
+              label={`Projects (${projects.length})`}
               {...a11yProps(0)}
             />
             <Tab
               icon={<Award className="mb-2 w-5 h-5 transition-all duration-300" />}
-              label="Certificates"
+              label={`Certificates (${certificates.length})`} 
               {...a11yProps(1)}
             />
             <Tab
@@ -267,16 +265,8 @@ export default function FullWidthTabs() {
 
           <TabPanel value={value} index={2} dir={theme.direction}>
             <div className="container mx-auto flex justify-center items-center overflow-hidden pb-[5%]">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
-                {techStacks.map((stack, index) => (
-                  <div
-                    key={index}
-                    data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
-                    data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
-                  >
-                    <TechStackIcon TechStackIcon={stack.icon} Language={stack.language} />
-                  </div>
-                ))}
+              <div className="grid grid-rows-2 md:grid-rows-3 lg:grid-rows-2 mb-[-55%] lg:gap-8 gap-5">
+                <TechStackIcon techStackData={techStacks} />
               </div>
             </div>
           </TabPanel>

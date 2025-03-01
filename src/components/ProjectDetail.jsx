@@ -102,52 +102,52 @@ const ProjectDetails = () => {
   const [project, setProject] = useState(null);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  //   const storedProjects = JSON.parse(localStorage.getItem("projects")) || [];
-  //   const selectedProject = storedProjects.find((p) => String(p.id) === id);
-    
-  //   if (selectedProject) {
-  //     const enhancedProject = {
-  //       ...selectedProject,
-  //       Features: selectedProject.Features || [],
-  //       TechStack: selectedProject.TechStack || [],
-  //       Github: selectedProject.Github || 
-  //       "https://github.com/KhushiChauhan8",
-  //     };
-  //     setProject(enhancedProject);
-  //   }
-  // }, [id]);
-
   useEffect(() => {
     window.scrollTo(0, 0);
-  
-    // Pehle check karo ki localStorage me data hai ya nahi
-    let storedProjects = JSON.parse(localStorage.getItem("projects"));
-  
-    // 👇 Yeh log karega ki localStorage me kya stored hai
-    console.log("LocalStorage projects data:", storedProjects);
-  
-    // Agar localStorage me "projects" nahi mila, to projectsData ko waha store kar do
-    if (!storedProjects) {
-      localStorage.setItem("projects", JSON.stringify(projectsData));
-      storedProjects = projectsData;
-      console.log("Projects data set in localStorage:", storedProjects);
-    }
-  
-    // Fir selectedProject ko find karo
+    const storedProjects = JSON.parse(localStorage.getItem("projects")) || [];
     const selectedProject = storedProjects.find((p) => String(p.id) === id);
-  
+    
     if (selectedProject) {
       const enhancedProject = {
         ...selectedProject,
         Features: selectedProject.Features || [],
         TechStack: selectedProject.TechStack || [],
-        Github: selectedProject.Github || "https://github.com/EkiZR",
+        Github: selectedProject.Github || 
+        "https://github.com/KhushiChauhan8",
       };
       setProject(enhancedProject);
     }
   }, [id]);
+
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  
+    
+  //   let storedProjects = JSON.parse(localStorage.getItem("projects"));
+  
+    
+  //   console.log("LocalStorage projects data:", storedProjects);
+  
+    
+  //   if (!storedProjects) {
+  //     localStorage.setItem("projects", JSON.stringify(projectsData));
+  //     storedProjects = projectsData;
+  //     console.log("Projects data set in localStorage:", storedProjects);
+  //   }
+  
+  //   // Fir selectedProject ko find karo
+  //   const selectedProject = storedProjects.find((p) => String(p.id) === id);
+  
+  //   if (selectedProject) {
+  //     const enhancedProject = {
+  //       ...selectedProject,
+  //       Features: selectedProject.Features || [],
+  //       TechStack: selectedProject.TechStack || [],
+  //       Github: selectedProject.Github || "https://github.com/KhushiChauhan8",
+  //     };
+  //     setProject(enhancedProject);
+  //   }
+  // }, [id]);
   
   
 

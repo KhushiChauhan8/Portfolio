@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { certificatesData } from "../data/certificates"; // Import certificatesData
+import { projectsData } from "../data/projects"; // Import projectsData
 
 // Memoized Components
 const Header = memo(() => (
@@ -126,6 +128,16 @@ const StatCard = memo(
 const AboutPage = () => {
   // Memoized calculations
   const { totalProjects, totalCertificates, YearExperience } = useMemo(() => {
+    // Store certificatesData in localStorage if not already stored
+    if (!localStorage.getItem("certificates")) {
+      localStorage.setItem("certificates", JSON.stringify(certificatesData));
+    }
+
+    // Store projectsData in localStorage if not already stored
+    if (!localStorage.getItem("projects")) {
+      localStorage.setItem("projects", JSON.stringify(projectsData));
+    }
+
     const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
     const storedCertificates = JSON.parse(
       localStorage.getItem("certificates") || "[]"
@@ -195,7 +207,7 @@ const AboutPage = () => {
         icon: Globe,
         color: "from-[#6366f1] to-[#a855f7]",
         value: YearExperience,
-        label: "Years of Experience",
+        label: "Years of Experience in Building Scalable Web Apps",
         description: "Continuous learning journey",
         animation: "fade-left",
       },
@@ -240,7 +252,7 @@ const AboutPage = () => {
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
               <a
-                href=""
+                href="https://drive.google.com/file/d/1633S-p3pXfI8LsPm4sEafubKfh6_pqu4/view?usp=drive_link"
                 className="w-full lg:w-auto"
               >
                 <button
