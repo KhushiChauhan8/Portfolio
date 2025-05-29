@@ -95,7 +95,7 @@ export const projectsData = [
   },
   {
      id: 6,
-    Img: "/Project7.png",
+    Img: "/Project6.png",
     Title: "Photo Gallery Web App",
     Description:
       "A responsive photo gallery web application built using HTML, CSS, and JavaScript. It showcases a collection of images with smooth UI interactions, providing a seamless user experience.",
