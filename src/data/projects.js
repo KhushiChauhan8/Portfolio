@@ -94,7 +94,7 @@ export const projectsData = [
     ],
   },
   {
-     id: 6,
+    id: 6,
     Img: "/Project6.png",
     Title: "Photo Gallery Web App",
     Description:
