@@ -95,19 +95,18 @@ export const projectsData = [
   },
   {
     id: 6,
-    Img: "/Project6.png",
-    Title: "Photo Gallery Web App",
+    Img: "/project6.png",
+    Title: "Redux Toolkit To-Do Application",
     Description:
-      "A responsive photo gallery web application built using HTML, CSS, and JavaScript. It showcases a collection of images with smooth UI interactions, providing a seamless user experience.",
-    Link: "https://photo-gallery-phi-six.vercel.app/",
-    TechStack: ["HTML", "CSS", "JavaScript", "Vercel"],
+      "A to-do application built using Redux Toolkit for efficient state management. Users can add, edit, and delete tasks with a smooth user experience.",
+    Link: "http://redux-toolkit-to-do-psi.vercel.app",
+    TechStack: ["React", "Redux Toolkit", "Vite", "Vercel"],
     Features: [
-      "Clean and responsive image layout.",
-      "Smooth hover and transition effects.",
-      "Interactive UI built with plain JavaScript.",
-      "Deployed and hosted on Vercel.",
-      "Optimized for various screen sizes.",
+      "State management with Redux Toolkit.",
+      "Fast performance with Vite bundler.",
+      "Easily add, edit, and delete tasks.",
+      "Responsive design suitable for all devices.",
     ],
-  },
+  }
 ];
 
